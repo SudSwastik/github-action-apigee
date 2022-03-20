@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="external">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <!--<Step>-->
+            <!--    <Name>AM-RemovePathSuffix</Name>-->
+            <!--</Step>-->
+            <!--<Step>-->
+            <!--    <Name>AM-SetTargetHostHeader</Name>-->
+            <!--</Step>-->
+            <Step>
+                <Name>FC-HostHeader</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows/>
+    <HTTPTargetConnection>
+        <LoadBalancer>
+            <Algorithm>RoundRobin</Algorithm>
+            <Server name="httpbin"/>
+        </LoadBalancer>
+        <Path>/accounts</Path>
+        <Properties/>
+        <!--<URL>http://34.71.204.73</URL>-->
+    </HTTPTargetConnection>
+</TargetEndpoint>

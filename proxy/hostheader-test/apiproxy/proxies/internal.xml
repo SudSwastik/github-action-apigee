@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="internal">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>VAK-Internal</Name>
+            </Step>
+            <Step>
+                <Name>JavaScript-1</Name>
+            </Step>
+            <!--<Step>-->
+            <!--    <Name>Raise-Fault-1</Name>-->
+            <!--    <Condition>(request.header.Host != </Condition>-->
+            <!--</Step>-->
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows/>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1/hostheader</BasePath>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="internal">
+        <TargetEndpoint>internal</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,53 @@
+name: Apigee Component Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment:
+        type: choice
+        description: Apigee Component To Deploy
+        required: true
+        options: 
+        - proxy
+        - sharedflow
+      proxy_sharedflow_name:
+        description: Apigee Component To Deploy
+        required: true
+      environment:
+        type: choice
+        required: true
+        description: Apigee Component To Deploy
+        options: 
+          - prod
+          - test
+
+env:
+  USERNAME: ${{ secrets.USERNAME}}
+  PASSWORD: ${{ secrets.PASSWORD}}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install -g apigeetool
+        env:
+          deployment: ${{ github.event.inputs.deployment }}
+      - name: Deploy Proxy 
+        if: ${{ github.event.inputs.deployment == 'proxy' }}
+        working-directory: ./proxy
+        run: | 
+          apigeetool  deployproxy  -V -u $USERNAME -p $PASSWORD -o sudarshan4309-eval  -e ${{ github.event.inputs.environment }} -n ${{ github.event.inputs.proxy_sharedflow_name }} -d ./${{ github.event.inputs.proxy_sharedflow_name }}
+      - name: Deploy SharedFlow 
+        if: ${{ github.event.inputs.deployment == 'sharedflow' }}
+        working-directory: ./sharedflow
+        run: |
+          apigeetool  deploySharedflow  -V -u $USERNAME -p $PASSWORD -o sudarshan4309-eval  -e ${{ github.event.inputs.environment }} -n ${{ github.event.inputs.proxy_sharedflow_name }} -d ./${{ github.event.inputs.proxy_sharedflow_name }}
+
+         
+           
+

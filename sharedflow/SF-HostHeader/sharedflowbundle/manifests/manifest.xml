@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="JS-SetTargetHostHeader" version="SHA-512:df2c481061bf3e913815344a67766f6178b37aca087dc17d6562ddefee3d1118714cb2ebcf70b751e7ebd090c0f3f3af3467b7f356924b99b0cf5fb9efb231b6"/>
+    </Policies>
+    <ProxyEndpoints/>
+    <Resources>
+        <VersionInfo resourceName="jsc://JS-SetTargetHostHeader.js" version="SHA-512:72bfa32d8546a60b0c4489beafee95b223de25a96da41bd67e0bdf352121305d8a5769eaddc8be04d3f567ffc9a7654dfe5045ec5549bbe4458729f4eea9df7e"/>
+    </Resources>
+    <SharedFlows>
+        <VersionInfo resourceName="default" version="SHA-512:5e3163332c4c378109279b2bacfae48225c8aed703bc833c571b1ed3a143f1269430d7b7d4615aff70e89cb9636aa5e261b920af4aa712b0ff55c57c241081c6"/>
+    </SharedFlows>
+    <TargetEndpoints/>
+</Manifest>

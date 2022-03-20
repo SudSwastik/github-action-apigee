@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="4" name="hostheader-test">
+    <Basepaths>/v1/hostheader</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1640189266723</CreatedAt>
+    <CreatedBy>sudarshan4309@gmail.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>hostheader-test</DisplayName>
+    <LastModifiedAt>1644218229825</LastModifiedAt>
+    <LastModifiedBy>sudarshan4309@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:f1572cc78eaea38f4f3f023e16d05cabb97c4ed83ceff9665fc2870bf122ca90bb1d10d336a2432af4c523a6ba70510991fe8716aae8277b06a2449d461b2b70:ap-northeast-1</ManifestVersion>
+    <Policies>
+        <Policy>AM-RemovePathSuffix</Policy>
+        <Policy>AM-SetTargetHostHeader</Policy>
+        <Policy>Assign-Message-1</Policy>
+        <Policy>FC-HostHeader</Policy>
+        <Policy>JavaScript-1</Policy>
+        <Policy>Raise-Fault-1</Policy>
+        <Policy>VAK-External</Policy>
+        <Policy>VAK-Internal</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>external</ProxyEndpoint>
+        <ProxyEndpoint>internal</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JavaScript-1.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>external</TargetEndpoint>
+        <TargetEndpoint>internal</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
